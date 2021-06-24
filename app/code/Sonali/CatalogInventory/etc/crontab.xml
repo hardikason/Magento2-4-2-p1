@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="cataloginventory_import" instance="Sonali\CatalogInventory\Cron\CatalogInventoryImport"
+             method="execute">
+            <config_path>crontab/default/jobs/cataloginventory_import/schedule/cron_expr</config_path>
+        </job>
+    </group>
+    <group id="inventory_import">
+        <job name="cataloginventory_import_manual" instance="Sonali\CatalogInventory\Cron\CatalogInventoryImport"
+             method="execute">
+            <config_path>crontab/default/jobs/cataloginventory_import/schedule/cron_expr</config_path>
+        </job>
+    </group>
+</config>

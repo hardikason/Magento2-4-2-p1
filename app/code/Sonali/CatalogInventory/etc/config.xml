@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <cataloginventory>
+            <import>
+                <enable>1</enable>
+                <import_cronexpr>*/10 * * * *</import_cronexpr>
+                <import_folder>import</import_folder>
+                <import_archive_folder>import/archive</import_archive_folder>
+                <filename>log/test</filename>
+            </import>
+        </cataloginventory>
+    </default>
+</config>

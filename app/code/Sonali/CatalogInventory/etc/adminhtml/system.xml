@@ -1,0 +1,37 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="cataloginventory" showInStore="1" showInWebsite="1" sortOrder="10" translate="label">
+            <tab>catalog</tab>
+            <group id="import" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="1000" translate="label">
+                <label>Inventory Import Configuration</label>
+
+                <field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10"
+                       translate="label" type="select">
+                    <label>Enable Cron for Import</label>
+                    <comment>Enable/Disable</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="import_cronexpr" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import CRON Expression</label>
+                    <backend_model>Sonali\CatalogInventory\Model\Config\CronConfig</backend_model>
+                    <comment>eg. */5 * * * * for every five minutes, eg. 59 23 * * * At 23:59 daily</comment>
+                </field>
+                <field id="import_folder" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import Folder</label>
+                    <validate>required-entry</validate>
+                    <comment>Provide folder name to access files. It should be in 'var' folder. Eg. import</comment>
+                </field>
+                <field id="import_archive_folder" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Import Archive Folder</label>
+                    <validate>required-entry</validate>
+                    <comment>It will create in 'var' folder Eg. import/archive</comment>
+                </field>
+                <field id="filename" translate="label" type="text" sortOrder="21" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Log File Name</label>
+                    <validate>required-entry</validate>
+                    <comment>Eg. log/test</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
